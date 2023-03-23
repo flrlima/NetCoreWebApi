@@ -1,4 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using SmartSchool.WebAPI.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var stringConnection = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContextPool<SmartContext>(
+	options => options.UseSqlite(stringConnection)
+);
 
 // Add services to the container.
 
@@ -7,13 +15,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+	app.UseSwagger();
+	app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();

@@ -8,11 +8,11 @@
 			"name": ".NET Core Launch (web)",
 			"type": "coreclr",
 			"request": "launch",
-			"preLaunchTask": "build",
+			"preLaunchTask": "dotnet build",
 			// If you have changed target frameworks, make sure to update the program path.
-			"program": "${workspaceFolder}/SmartScholl.WebAPI/bin/Debug/net6.0/SmartScholl.WebAPI.dll",
-			"args": [],
-			"cwd": "${workspaceFolder}/SmartScholl.WebAPI",
+			"program": "${workspaceFolder}/SmartSchool.WebAPI/bin/Debug/net6.0/SmartSchool.WebAPI.dll",
+			"args": "${auto-detect_url}",
+			"cwd": "${workspaceFolder}/SmartSchool.WebAPI",
 			"stopAtEntry": false,
 			// Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
 			"serverReadyAction": {
